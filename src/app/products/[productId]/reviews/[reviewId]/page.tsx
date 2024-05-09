@@ -1,11 +1,20 @@
+"use client";
 import { notFound } from "next/navigation";
 
-export default function ReviewsDetai({ params }: {
+function getRandomInt(count: number){
+  return Math.floor(Math.random() * count);
+}
+
+export default function ReviewsDetail({ params }: {
   params: {
     productId: string,
     reviewId: string
     };
 }){
+  // const random = getRandomInt(2);
+  // if(random === 1){
+  //   throw new Error(`Error Loading Review ${params.reviewId}`);
+  // }
   if(parseInt(params.reviewId) > 1000 ){
     notFound();
   }
